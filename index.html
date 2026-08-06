@@ -4,245 +4,756 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jianhao Liu | Academic CV</title>
+    <meta name="description" content="Jianhao Liu — Lecturer in Big Data, researcher in Trustworthy Generative Agents & LLM Agents. Research, projects, teaching and writings.">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Times New Roman", Georgia, serif;
+        /* ---------- Design tokens ---------- */
+        :root {
+            --indigo-900: #1e1b4b;
+            --indigo-800: #312e81;
+            --indigo-700: #3730a3;
+            --indigo-600: #4338ca;
+            --indigo-500: #6366f1;
+            --indigo-100: #e0e7ff;
+            --indigo-50:  #eef2ff;
+
+            --ink:   #1e293b;
+            --ink-2: #334155;
+            --muted: #64748b;
+            --line:  #e2e8f0;
+            --bg:    #f6f7fb;
+            --card:  #ffffff;
+
+            --radius: 14px;
+            --shadow-sm: 0 1px 2px rgba(30, 27, 75, .06), 0 1px 3px rgba(30, 27, 75, .04);
+            --shadow-md: 0 6px 18px rgba(30, 27, 75, .08), 0 2px 6px rgba(30, 27, 75, .05);
+            --shadow-lg: 0 18px 40px rgba(30, 27, 75, .12);
+
+            --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                    "Hiragino Sans GB", "Microsoft YaHei", Roboto, system-ui, sans-serif;
+            --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+                     "Times New Roman", serif;
+            --mono: "SF Mono", "JetBrains Mono", "Cascadia Code", Consolas, monospace;
         }
+
+        /* ---------- Base ---------- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 84px; }
         body {
-            max-width: 1080px;
-            margin: 40px auto;
-            padding: 0 40px;
-            color: #1a1a1a;
-            line-height: 1.65;
+            font-family: var(--sans);
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
         }
-        header {
-            border-bottom: 2px solid #224;
-            padding-bottom: 12px;
-            margin-bottom: 30px;
+        a { color: var(--indigo-700); text-decoration: none; transition: color .2s ease; }
+        a:hover { color: var(--indigo-500); }
+        ::selection { background: var(--indigo-100); color: var(--indigo-900); }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 28px; }
+
+        /* ---------- Top nav ---------- */
+        nav.top {
+            position: sticky; top: 0; z-index: 50;
+            backdrop-filter: saturate(140%) blur(10px);
+            background: rgba(246, 247, 251, .82);
+            border-bottom: 1px solid var(--line);
         }
-        h1 {
-            font-size: 32px;
-            font-weight: 600;
+        nav.top .inner {
+            max-width: 1000px; margin: 0 auto; padding: 14px 28px;
+            display: flex; align-items: center; justify-content: space-between; gap: 16px;
         }
+        nav.top .brand {
+            font-family: var(--serif); font-size: 17px; font-weight: 700;
+            color: var(--indigo-900); letter-spacing: .2px;
+        }
+        nav.top .brand span { color: var(--indigo-500); }
+        nav.top ul { list-style: none; display: flex; gap: 4px; flex-wrap: wrap; }
+        nav.top a {
+            display: inline-block; padding: 8px 12px; border-radius: 8px;
+            font-size: 14px; color: var(--ink-2); transition: background .2s, color .2s;
+        }
+        nav.top a:hover { background: var(--indigo-50); color: var(--indigo-700); }
+
+        /* ---------- Hero ---------- */
+        header.hero {
+            padding: 64px 0 40px;
+            background:
+                radial-gradient(900px 360px at 85% -10%, rgba(99, 102, 241, .14), transparent 70%),
+                linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+            border-bottom: 1px solid var(--line);
+        }
+        .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
+        .hero h1 {
+            font-family: var(--serif);
+            font-size: clamp(34px, 5vw, 46px);
+            font-weight: 700; line-height: 1.1; color: var(--indigo-900);
+            letter-spacing: -.5px;
+        }
+        .hero .tagline {
+            margin-top: 10px; font-size: 18px; color: var(--ink-2); max-width: 60ch;
+        }
+        .hero .tagline b { color: var(--indigo-700); font-weight: 600; }
         .contact-bar {
-            margin-top: 8px;
-            font-size: 16px;
-            color: #333;
+            margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px 10px;
         }
-        .contact-bar span {
-            margin-right: 20px;
+        .chip {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 7px 13px; font-size: 13.5px; color: var(--ink-2);
+            background: var(--card); border: 1px solid var(--line);
+            border-radius: 999px; box-shadow: var(--shadow-sm);
+            transition: transform .2s ease, box-shadow .2s ease;
         }
-        section {
-            margin-bottom: 32px;
+        .chip:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+        .chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--indigo-500); }
+
+        .avatar {
+            width: 116px; height: 116px; border-radius: 28px;
+            display: grid; place-items: center;
+            font-family: var(--serif); font-size: 42px; font-weight: 700; color: #fff;
+            background: linear-gradient(135deg, var(--indigo-700), var(--indigo-500));
+            box-shadow: var(--shadow-lg);
+            letter-spacing: 1px;
+        }
+
+        /* ---------- Sections ---------- */
+        section.block { padding: 44px 0; border-bottom: 1px solid var(--line); }
+        section.block:last-of-type { border-bottom: none; }
+        .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 22px; }
+        .sec-head .num {
+            font-family: var(--mono); font-size: 12.5px; color: var(--indigo-500);
+            font-weight: 600; letter-spacing: .5px;
         }
         h2 {
-            font-size: 20px;
-            border-left: 4px solid #224;
-            padding-left: 10px;
-            margin-bottom: 14px;
-            color: #112;
+            font-size: 24px; font-weight: 700; color: var(--indigo-900);
+            letter-spacing: -.2px; position: relative;
         }
-        .research-interests {
-            font-size: 17px;
-            padding: 8px 10px;
-            background: #f6f8fc;
-            border-radius: 4px;
+        .sec-head .rule { flex: 1; height: 1px; background: var(--line); }
+
+        .lead {
+            font-size: 17.5px; color: var(--ink-2);
+            padding: 14px 18px; background: var(--indigo-50);
+            border-left: 3px solid var(--indigo-500); border-radius: 0 10px 10px 0;
         }
+        .meta-line { margin-top: 12px; font-size: 15px; color: var(--ink-2); }
+        .meta-line strong { color: var(--ink); }
+
+        /* ---------- Timeline ---------- */
+        .timeline { position: relative; }
         .timeline-item {
-            margin-bottom: 16px;
+            position: relative; padding: 4px 0 22px 26px;
+            border-left: 2px solid var(--line);
+        }
+        .timeline-item:last-child { border-left-color: transparent; }
+        .timeline-item::before {
+            content: ""; position: absolute; left: -7px; top: 8px;
+            width: 12px; height: 12px; border-radius: 50%;
+            background: var(--card); border: 2px solid var(--indigo-500);
+            box-shadow: 0 0 0 4px var(--indigo-50);
         }
         .timeline-head {
-            display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            font-size: 17px;
+            display: flex; justify-content: space-between; gap: 14px;
+            flex-wrap: wrap; font-weight: 600; font-size: 16px; color: var(--ink);
         }
+        .timeline-head .where { color: var(--ink-2); font-weight: 500; }
         .timeline-sub {
-            font-style: italic;
-            color: #444;
-            margin-bottom: 6px;
+            font-style: italic; color: var(--muted); margin: 4px 0 8px; font-size: 14.5px;
         }
-        ul {
-            padding-left: 22px;
+        ul.bullets { padding-left: 20px; }
+        ul.bullets li { margin-bottom: 6px; color: var(--ink-2); font-size: 15px; }
+        ul.bullets li::marker { color: var(--indigo-500); }
+
+        /* ---------- Cards / grid ---------- */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .card {
+            background: var(--card); border: 1px solid var(--line);
+            border-radius: var(--radius); padding: 22px 24px;
+            box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease;
         }
-        li {
-            margin-bottom: 6px;
+        .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .card h3 {
+            font-size: 16px; color: var(--indigo-800); margin-bottom: 6px;
+            display: flex; align-items: center; gap: 8px;
         }
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        .paper-item, .ip-item {
-            margin-bottom: 10px;
-        }
+        .card p { font-size: 14.5px; color: var(--ink-2); }
+
+        /* skills */
+        .skill-group { margin-bottom: 14px; }
         .skill-group h4 {
-            margin: 8px 0 4px;
+            font-size: 14px; color: var(--indigo-700); margin-bottom: 4px;
+            text-transform: uppercase; letter-spacing: .6px;
         }
-        a {
-            color: #0044aa;
-            text-decoration: none;
+        .skill-group p { font-size: 14.5px; color: var(--ink-2); }
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+        .tag {
+            font-size: 12.5px; padding: 3px 9px; border-radius: 6px;
+            background: var(--indigo-50); color: var(--indigo-700);
         }
-        a:hover {
-            text-decoration: underline;
+
+        /* publications */
+        .pub-item {
+            padding: 10px 0; border-bottom: 1px dashed var(--line);
+            font-size: 14.5px; color: var(--ink-2);
+        }
+        .pub-item:last-child { border-bottom: none; }
+        .pub-item i { color: var(--muted); }
+        .pub-item .idx { color: var(--indigo-500); font-family: var(--mono); font-weight: 600; }
+
+        /* ---------- Lab recruitment ---------- */
+        .lab-hero {
+            background: linear-gradient(135deg, var(--indigo-800) 0%, var(--indigo-600) 100%);
+            color: #fff; border-radius: 18px; padding: 34px 34px;
+            box-shadow: var(--shadow-lg); position: relative; overflow: hidden;
+        }
+        .lab-hero::after {
+            content: ""; position: absolute; right: -60px; bottom: -60px;
+            width: 220px; height: 220px; border-radius: 50%;
+            background: rgba(255, 255, 255, .08);
+        }
+        .lab-hero .eyebrow {
+            font-family: var(--mono); font-size: 12px; letter-spacing: 1px;
+            text-transform: uppercase; opacity: .8;
+        }
+        .lab-hero h3 { font-size: 26px; margin: 6px 0 10px; font-weight: 700; }
+        .lab-hero p { font-size: 15.5px; opacity: .92; max-width: 60ch; }
+        .lab-cta {
+            display: inline-flex; align-items: center; gap: 8px; margin-top: 18px;
+            padding: 11px 20px; border-radius: 999px; font-weight: 600;
+            background: #fff; color: var(--indigo-700); font-size: 14.5px;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .lab-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); color: var(--indigo-700); }
+        .lab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 22px; }
+        .lab-cell {
+            background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+            padding: 20px; box-shadow: var(--shadow-sm);
+        }
+        .lab-cell .ico {
+            width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center;
+            background: var(--indigo-50); color: var(--indigo-600); font-size: 18px; margin-bottom: 10px;
+        }
+        .lab-cell h4 { font-size: 15px; color: var(--ink); margin-bottom: 4px; }
+        .lab-cell p { font-size: 13.5px; color: var(--muted); }
+
+        /* ---------- Students ---------- */
+        .students-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+        .student-card {
+            background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+            padding: 20px; box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        .student-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+        .student-card .top { display: flex; align-items: center; gap: 12px; }
+        .student-avatar {
+            width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center;
+            font-weight: 700; font-size: 16px; color: #fff;
+            background: linear-gradient(135deg, var(--indigo-600), var(--indigo-500));
+            flex-shrink: 0;
+        }
+        .student-card .name { font-weight: 600; color: var(--ink); font-size: 15.5px; }
+        .student-card .role { font-size: 13px; color: var(--muted); }
+        .student-card .desc { font-size: 13.5px; color: var(--ink-2); }
+        .student-card .gh {
+            display: inline-flex; align-items: center; gap: 6px; margin-top: auto;
+            font-size: 13px; font-family: var(--mono); color: var(--indigo-700);
+            padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; align-self: flex-start;
+            transition: background .2s, border-color .2s;
+        }
+        .student-card .gh:hover { background: var(--indigo-50); border-color: var(--indigo-100); }
+        .empty-note {
+            margin-top: 18px; font-size: 13px; color: var(--muted);
+            padding: 12px 16px; background: var(--indigo-50); border-radius: 10px;
+        }
+
+        /* ---------- FAQ ---------- */
+        details.faq {
+            background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+            padding: 0; margin-bottom: 12px; box-shadow: var(--shadow-sm); overflow: hidden;
+            transition: box-shadow .2s ease;
+        }
+        details.faq[open] { box-shadow: var(--shadow-md); }
+        details.faq summary {
+            list-style: none; cursor: pointer; padding: 18px 22px;
+            display: flex; align-items: center; gap: 14px;
+            font-weight: 600; font-size: 16px; color: var(--ink);
+            transition: background .2s ease;
+        }
+        details.faq summary::-webkit-details-marker { display: none; }
+        details.faq summary:hover { background: var(--indigo-50); }
+        details.faq summary .q-mark {
+            flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px;
+            display: grid; place-items: center; font-family: var(--mono); font-size: 13px;
+            background: var(--indigo-100); color: var(--indigo-700); font-weight: 700;
+        }
+        details.faq summary .chev {
+            margin-left: auto; color: var(--muted); transition: transform .25s ease; font-size: 14px;
+        }
+        details.faq[open] summary .chev { transform: rotate(180deg); }
+        .faq-body { padding: 0 22px 20px 64px; color: var(--ink-2); font-size: 14.5px; }
+        .faq-body p { margin-bottom: 8px; }
+        .faq-body ul { padding-left: 18px; margin: 6px 0; }
+        .faq-body li { margin-bottom: 4px; }
+        .faq-body .tip {
+            margin-top: 10px; padding: 10px 14px; font-size: 13.5px;
+            background: var(--indigo-50); border-radius: 8px; color: var(--indigo-800);
+        }
+
+        /* ---------- Footer ---------- */
+        footer.site {
+            padding: 36px 0 48px; text-align: center; color: var(--muted); font-size: 13.5px;
+        }
+        footer.site a { color: var(--indigo-700); }
+
+        /* ---------- Reveal animation (light) ---------- */
+        .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+        .reveal.in { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+            html { scroll-behavior: auto; }
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 760px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .avatar { width: 88px; height: 88px; font-size: 34px; border-radius: 22px; }
+            nav.top ul { display: none; }
+            .grid-2, .lab-grid { grid-template-columns: 1fr; }
+            .faq-body { padding-left: 22px; }
+            .timeline-head { flex-direction: column; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Jianhao Liu</h1>
-        <div class="contact-bar">
-            <span>Mobile: +86 18571511215</span>
-            <span>Email: jianhaoliu666@163.com</span>
-            <span>Address: Wuhan, Hubei Province, China</span>
+    <nav class="top">
+        <div class="inner">
+            <div class="brand">Jianhao <span>Liu</span></div>
+            <ul>
+                <li><a href="#interests">兴趣</a></li>
+                <li><a href="#career">履历</a></li>
+                <li><a href="#projects">项目</a></li>
+                <li><a href="#skills">技能</a></li>
+                <li><a href="#publications">论著</a></li>
+                <li><a href="#lab">招募</a></li>
+                <li><a href="#students">同学</a></li>
+                <li><a href="#faq">答疑</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-grid">
+            <div>
+                <h1>Jianhao Liu</h1>
+                <p class="tagline">
+                    Lecturer in Big Data · researching <b>Trustworthy Generative Agents</b>,
+                    <b>LLM Agents</b> &amp; <b>Machine Psychology</b> — exploring long-term behavioral
+                    coherence and self-evolving agents.
+                </p>
+                <div class="contact-bar">
+                    <span class="chip"><span class="dot"></span> Email · jianhaoliu666@163.com</span>
+                    <span class="chip"><span class="dot"></span> Wuhan, Hubei, China</span>
+                </div>
+            </div>
+            <div class="avatar" aria-hidden="true">JL</div>
         </div>
     </header>
 
-    <section>
-        <h2>Research Interests</h2>
-        <div class="research-interests">
-            Trustworthy Generative Agents, LLM Agents, Machine Psychology, Human–Computer Interaction, Long-Term Behavioral Coherence, Self-Evolving Agents, AI4SE
-        </div>
-        <div style="margin-top:10px">
-            <strong>Standardized Test:</strong> GRE 328 (V+Q), AW 4.0
-        </div>
-    </section>
+    <main class="container">
+        <!-- Research Interests -->
+        <section class="block" id="interests">
+            <div class="sec-head reveal">
+                <span class="num">01</span>
+                <h2>Research Interests</h2>
+                <span class="rule"></span>
+            </div>
+            <div class="lead reveal">
+                Trustworthy Generative Agents · LLM Agents · Machine Psychology ·
+                Human–Computer Interaction · Long-Term Behavioral Coherence ·
+                Self-Evolving Agents · AI4SE
+            </div>
+            <div class="meta-line reveal">
+                <strong>Standardized Test:</strong> GRE 328 (V+Q), AW 4.0
+            </div>
+        </section>
 
-    <section>
-        <h2>Work & Education</h2>
-        <div class="timeline-item">
-            <div class="timeline-head">
-                <span>2025/03 – Present | Wuhan Textile University, Wuhan, China</span>
-                <span>Lecturer in Big Data</span>
+        <!-- Work & Education -->
+        <section class="block" id="career">
+            <div class="sec-head reveal">
+                <span class="num">02</span>
+                <h2>Work &amp; Education</h2>
+                <span class="rule"></span>
             </div>
-            <ul>
-                <li>Delivered core undergraduate courses: Big Data Analytic, Big Data Technology, Data Visualization.</li>
-                <li>Built LLM & generative agent practical training modules; supervised students to win multiple provincial AI competition awards and obtain big data analyst certifications.</li>
-            </ul>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-head">
-                <span>2025/03 – Present | Enshellx Dedux Lubricants Limited Company, Wuhan</span>
-                <span>Data Analyst & Digital Transformation Engineer</span>
+            <div class="timeline reveal">
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <span>2025/03 – Present · Wuhan Textile University, Wuhan</span>
+                        <span class="where">Lecturer in Big Data</span>
+                    </div>
+                    <ul class="bullets">
+                        <li>Delivered core undergraduate courses: Big Data Analytic, Big Data Technology, Data Visualization.</li>
+                        <li>Built LLM &amp; generative agent practical training modules; supervised students to win multiple provincial AI competition awards and obtain big data analyst certifications.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <span>2025/03 – Present · Enshellx Dedux Lubricants, Wuhan</span>
+                        <span class="where">Data Analyst &amp; Digital Transformation Engineer</span>
+                    </div>
+                    <ul class="bullets">
+                        <li>Developed factory data warehouse, ETL pipelines and digital simulation models for manufacturing production.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <span>03/2021 – 05/2023 · CIICMC, Wuhan</span>
+                        <span class="where">Consultant, Project Manager</span>
+                    </div>
+                    <ul class="bullets">
+                        <li>Built quantitative modelling and digital evaluation frameworks; managed projects with annual revenue over ¥10M.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <span>09/2019 – 01/2021 · University of Liverpool, UK</span>
+                        <span class="where">MSc Business Analysis &amp; Big Data (Merit, Top 30%)</span>
+                    </div>
+                    <div class="timeline-sub">Core: Machine Learning &amp; Data Mining, Big Data Management, Business Simulation, Predictive Analytics</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-head">
+                        <span>09/2016 – 06/2019 · University of Sunderland, UK</span>
+                        <span class="where">BA Accounting &amp; Financial Management (Merit, Top 30%)</span>
+                    </div>
+                    <div class="timeline-sub">Math &amp; Stat Foundation: Advanced Math, Linear Algebra, Probability, Econometrics, Business Quantitative Methods</div>
+                </div>
             </div>
-            <ul>
-                <li>Developed factory data warehouse, ETL pipelines and digital simulation models for manufacturing production.</li>
-            </ul>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-head">
-                <span>03/2021 – 05/2023 | CIICMC, Wuhan, China</span>
-                <span>Consultant, Project Manager</span>
-            </div>
-            <ul>
-                <li>Built quantitative modelling and digital evaluation frameworks; managed projects with annual revenue over ¥10M.</li>
-            </ul>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-head">
-                <span>09/2019 – 01/2021 | University of Liverpool, Liverpool, UK</span>
-                <span>MSc in Business Analysis and Big Data (Merit, Top 30%)</span>
-            </div>
-            <div class="timeline-sub">Core Modules: Machine Learning & Data Mining, Big Data Management, Business Simulation, Predictive Analytics</div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-head">
-                <span>09/2016 – 06/2019 | University of Sunderland, Sunderland, UK</span>
-                <span>BA in Accounting and Financial Management (Merit, Top 30%)</span>
-            </div>
-            <div class="timeline-sub">Math & Stat Foundation: Advanced Math, Linear Algebra, Probability, Econometrics, Business Quantitative Methods</div>
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <h2>Research & Project Experience</h2>
-        <div class="timeline-item">
-            <div class="timeline-head">06/2026 – Present | Independent Cognitive AI Research</div>
-            <ul>
-                <li>Proposed UCAG multi-relational graph structure and BSA algorithm for cognitive generative agent modeling.</li>
-            </ul>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-head">12/2025 – Present | Project Lead, Multimodal AI Smart Glasses</div>
-            <ul>
-                <li>Built real-time multimodal pipeline integrating object detection, OCR and dynamic obstacle warning system.</li>
-            </ul>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-head">09/2025 – 02/2026 | University Big Data & AI Laboratory Construction</div>
-            <ul>
-                <li>Designed full-stack digital intelligence lab solution covering hardware, software and teaching curriculum.</li>
-                <li>Deployed distributed clusters: Hadoop, Spark, Kafka, Ray for large-scale big data & LLM experimental verification.</li>
-            </ul>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-head">12/2025 – 06/2025 | Digital Warehouse Modeling, Zhixin Technology</div>
-            <ul>
-                <li>Participated in enterprise data warehouse architecture design and multi-dimensional business data modeling.</li>
-            </ul>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-head">06/2020 – 11/2020 | Manufacturing Digital Transformation Simulation Study</div>
-            <ul>
-                <li>Constructed multi-dimensional KPI system and digital simulation models for automotive manufacturing enterprises.</li>
-            </ul>
-        </div>
-    </section>
+        <!-- Research & Project Experience -->
+        <section class="block" id="projects">
+            <div class="sec-head reveal">
+                <span class="num">03</span>
+                <h2>Research &amp; Project Experience</h2>
+                <span class="rule"></span>
+            </div>
+            <div class="timeline reveal">
+                <div class="timeline-item">
+                    <div class="timeline-head">06/2026 – Present · Independent Cognitive AI Research</div>
+                    <ul class="bullets">
+                        <li>Proposed UCAG multi-relational graph structure and BSA algorithm for cognitive generative agent modeling.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-head">12/2025 – Present · Project Lead, Multimodal AI Smart Glasses</div>
+                    <ul class="bullets">
+                        <li>Built real-time multimodal pipeline integrating object detection, OCR and dynamic obstacle warning system.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-head">09/2025 – 02/2026 · University Big Data &amp; AI Laboratory Construction</div>
+                    <ul class="bullets">
+                        <li>Designed full-stack digital intelligence lab solution covering hardware, software and teaching curriculum.</li>
+                        <li>Deployed distributed clusters: Hadoop, Spark, Kafka, Ray for large-scale big data &amp; LLM experimental verification.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-head">12/2024 – 06/2025 · Digital Warehouse Modeling, Zhixin Technology</div>
+                    <ul class="bullets">
+                        <li>Participated in enterprise data warehouse architecture design and multi-dimensional business data modeling.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-head">06/2020 – 11/2020 · Manufacturing Digital Transformation Simulation Study</div>
+                    <ul class="bullets">
+                        <li>Constructed multi-dimensional KPI system and digital simulation models for automotive manufacturing enterprises.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <section>
-        <h2>Teaching & Certifications</h2>
-        <div class="timeline-item">
-            <div class="timeline-head">Wuhan Textile University, School of Foreign Trade and Business (2025–Present)</div>
-            <ul>
-                <li>Instructor for undergraduate core modules: Big Data Technology Principles, Data Visualization, Business Data Analysis.</li>
-                <li>Supervisor for provincial-level innovation contests: Challenge Cup, National Software Competition, WorldSkills Hubei.</li>
-            </ul>
-        </div>
-        <div style="margin-top:10px">
-            <strong>Certificates:</strong> PMP (PMI), National University Teaching Qualification Certificate
-        </div>
-    </section>
+        <!-- Teaching & Certifications -->
+        <section class="block" id="teaching">
+            <div class="sec-head reveal">
+                <span class="num">04</span>
+                <h2>Teaching &amp; Certifications</h2>
+                <span class="rule"></span>
+            </div>
+            <div class="timeline reveal">
+                <div class="timeline-item">
+                    <div class="timeline-head">Wuhan Textile University, School of Foreign Trade &amp; Business (2025–Present)</div>
+                    <ul class="bullets">
+                        <li>Instructor for undergraduate core modules: Big Data Technology Principles, Data Visualization, Business Data Analysis.</li>
+                        <li>Supervisor for provincial-level innovation contests: Challenge Cup, National Software Competition, WorldSkills Hubei.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="meta-line reveal">
+                <strong>Certificates:</strong> PMP (PMI) · National University Teaching Qualification Certificate
+            </div>
+        </section>
 
-    <section class="two-col">
-        <div>
-            <h2>Technical Skills</h2>
-            <div class="skill-group">
-                <h4>AI & Generative Agents</h4>
-                <p>PyTorch, TensorFlow, Local LLM Deployment, Graph-based Agent Architecture</p>
+        <!-- Skills + Publications -->
+        <section class="block" id="skills">
+            <div class="sec-head reveal">
+                <span class="num">05</span>
+                <h2>Technical Skills</h2>
+                <span class="rule"></span>
             </div>
-            <div class="skill-group">
-                <h4>Distributed Big Data & ETL</h4>
-                <p>Hadoop, Spark, Flink, Kafka, Flume, Hive, Kettle</p>
+            <div class="grid-2 reveal">
+                <div class="card">
+                    <div class="skill-group">
+                        <h4>AI &amp; Generative Agents</h4>
+                        <div class="tags">
+                            <span class="tag">PyTorch</span><span class="tag">TensorFlow</span>
+                            <span class="tag">Local LLM Deployment</span>
+                            <span class="tag">Graph-based Agent Architecture</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Distributed Big Data &amp; ETL</h4>
+                        <div class="tags">
+                            <span class="tag">Hadoop</span><span class="tag">Spark</span><span class="tag">Flink</span>
+                            <span class="tag">Kafka</span><span class="tag">Flume</span><span class="tag">Hive</span><span class="tag">Kettle</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Database &amp; Graph Computing</h4>
+                        <div class="tags">
+                            <span class="tag">MySQL</span><span class="tag">MongoDB</span>
+                            <span class="tag">Redis</span><span class="tag">Neo4j</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="skill-group">
+                        <h4>Programming &amp; Visualization</h4>
+                        <div class="tags">
+                            <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Java</span>
+                            <span class="tag">C++</span><span class="tag">Scala</span>
+                            <span class="tag">Tableau</span><span class="tag">Matplotlib</span>
+                            <span class="tag">ECharts</span><span class="tag">SPSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Simulation &amp; DevOps</h4>
+                        <div class="tags">
+                            <span class="tag">Witness Simulation</span><span class="tag">UE4</span>
+                            <span class="tag">Docker</span><span class="tag">VMware</span>
+                            <span class="tag">AzerothCore Simulation Testbed</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="skill-group">
-                <h4>Database & Graph Computing</h4>
-                <p>MySQL, MongoDB, Redis, Neo4j</p>
-            </div>
-            <div class="skill-group">
-                <h4>Programming & Visualization</h4>
-                <p>Python, SQL, Java, C++, Scala; Tableau, Matplotlib, ECharts, SPSS</p>
-            </div>
-            <div class="skill-group">
-                <h4>Simulation & DevOps</h4>
-                <p>Witness Simulation, UE4, Docker, VMware, AzerothCore Simulation Testbed</p>
-            </div>
-        </div>
-        <div>
-            <h2>Publications & Intellectual Property</h2>
-            <h4>Peer-Reviewed Papers</h4>
-            <div class="paper-item">1. Zhou J, Xu L, Wang Q, Liu J. Coordinated Development of Manufacturing & Logistics Under Hubei Pilot Zone Strategy. <i>2025 IEEE IDAACS</i>, Poland, 2025.</div>
-            <div class="paper-item">2. Liu J. Big Data Applications, Challenges and Countermeasures in Healthcare. <i>Science and Technology Information Research</i>, 2025.</div>
-            <div class="paper-item">3. Liu J. Big Data-Driven Business Analysis & Decision Support Systems. <i>Frontiers of Economics and Management</i>, 2025.</div>
-            <div class="paper-item">4. Liu J. Integrated Marketing & Business Analytics Innovation: Automobile Enterprise Sandbox Case. <i>China Industry and Economics</i>, 2023.</div>
+        </section>
 
-            <h4 style="margin-top:12px">Software Copyrights (3 Registered)</h4>
-            <div class="ip-item">1. Big Data Quality Assessment Improvement Process Management System (2026SR0603954)</div>
-            <div class="ip-item">2. Real-Time Big Data Stream ML Adaptive Analysis Platform (2026SR0611951)</div>
-            <div class="ip-item">3. Big Data Clustering Algorithm Application System (2025SR0903841)</div>
+        <section class="block" id="publications">
+            <div class="sec-head reveal">
+                <span class="num">06</span>
+                <h2>Publications &amp; Intellectual Property</h2>
+                <span class="rule"></span>
+            </div>
+            <div class="grid-2 reveal">
+                <div class="card">
+                    <h3>📚 Peer-Reviewed Papers</h3>
+                    <div class="pub-item"><span class="idx">01</span> Zhou J, Xu L, Wang Q, Liu J. Coordinated Development of Manufacturing &amp; Logistics Under Hubei Pilot Zone Strategy. <i>2025 IEEE IDAACS</i>, Poland, 2025.</div>
+                    <div class="pub-item"><span class="idx">02</span> Liu J. Big Data Applications, Challenges and Countermeasures in Healthcare. <i>Science and Technology Information Research</i>, 2025.</div>
+                    <div class="pub-item"><span class="idx">03</span> Liu J. Big Data-Driven Business Analysis &amp; Decision Support Systems. <i>Frontiers of Economics and Management</i>, 2025.</div>
+                    <div class="pub-item"><span class="idx">04</span> Liu J. Integrated Marketing &amp; Business Analytics Innovation: Automobile Enterprise Sandbox Case. <i>China Industry and Economics</i>, 2023.</div>
+                </div>
+                <div class="card">
+                    <h3>💻 Software Copyrights (3 Registered)</h3>
+                    <div class="pub-item"><span class="idx">01</span> Big Data Quality Assessment Improvement Process Management System (2026SR0603954)</div>
+                    <div class="pub-item"><span class="idx">02</span> Real-Time Big Data Stream ML Adaptive Analysis Platform (2026SR0611951)</div>
+                    <div class="pub-item"><span class="idx">03</span> Big Data Clustering Algorithm Application System (2025SR0903841)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ NEW: Lab Recruitment ============ -->
+        <section class="block" id="lab">
+            <div class="sec-head reveal">
+                <span class="num">07</span>
+                <h2>实验室招募 · Lab Recruitment</h2>
+                <span class="rule"></span>
+            </div>
+            <div class="lab-hero reveal">
+                <div class="eyebrow">We are recruiting</div>
+                <h3>寻找愿意一起做认知 AI 测试的同学</h3>
+                <p>
+                    我们正在推进可信生成式智能体（Trustworthy Generative Agents）与 LLM Agent 的研究，
+                    需要同学参与实验设计、用例测试与行为评估。无论你是想入门科研，
+                    还是希望积累真实项目与论文经验，这里都有你的一席之地。
+                </p>
+                <a class="lab-cta" href="mailto:jianhaoliu666@163.com?subject=实验室测试同学申请">申请加入 →</a>
+            </div>
+            <div class="lab-grid reveal">
+                <div class="lab-cell">
+                    <div class="ico">🎯</div>
+                    <h4>测试与评估</h4>
+                    <p>参与智能体行为测试用例设计与长期一致性评估，记录并归档实验数据。</p>
+                </div>
+                <div class="lab-cell">
+                    <div class="ico">🧪</div>
+                    <h4>实验复现</h4>
+                    <p>复现最新 Agent 论文方法，搭建本地 LLM 与多关系图谱实验环境。</p>
+                </div>
+                <div class="lab-cell">
+                    <div class="ico">📈</div>
+                    <h4>成长通道</h4>
+                    <p>参与论文撰写、开源项目与竞赛，优秀者可获推荐与署名机会。</p>
+                </div>
+            </div>
+            <div class="meta-line reveal">
+                <strong>要求：</strong>对 LLM / Agent 有基础了解，会 Python，能稳定投入 6 小时/周以上。
+                <strong>联系方式：</strong>jianhaoliu666@163.com（邮件标题请注明「实验室测试同学申请」）。
+            </div>
+        </section>
+
+        <!-- ============ NEW: Outstanding Students ============ -->
+        <section class="block" id="students">
+            <div class="sec-head reveal">
+                <span class="num">08</span>
+                <h2>优秀同学展示 · Student Showcase</h2>
+                <span class="rule"></span>
+            </div>
+            <p class="reveal" style="color:var(--ink-2); margin-bottom:20px; max-width:70ch;">
+                这里展示我指导过的优秀同学及其 GitHub 开源作品，欢迎关注、star 与交流。
+            </p>
+            <div class="students-grid reveal">
+                <div class="student-card">
+                    <div class="top">
+                        <div class="student-avatar">何</div>
+                        <div>
+                            <div class="name">何健伟</div>
+                            <div class="role">Big Data · AI 工程方向</div>
+                        </div>
+                    </div>
+                    <div class="desc">大数据与智能体方向实践，参与实验复现与系统开发。</div>
+                    <a class="gh" href="https://github.com/" target="_blank" rel="noopener">↗ GitHub 作品</a>
+                </div>
+                <div class="student-card">
+                    <div class="top">
+                        <div class="student-avatar">曹</div>
+                        <div>
+                            <div class="name">曹伟凡</div>
+                            <div class="role">AI Agent · 研究方向</div>
+                        </div>
+                    </div>
+                    <div class="desc">LLM Agent 与知识图谱结合的问答与评估实践。</div>
+                    <a class="gh" href="https://github.com/" target="_blank" rel="noopener">↗ GitHub 作品</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ NEW: Quick Q&A ============ -->
+        <section class="block" id="faq">
+            <div class="sec-head reveal">
+                <span class="num">09</span>
+                <h2>快速答疑 · Quick Q&amp;A</h2>
+                <span class="rule"></span>
+            </div>
+            <p class="reveal" style="color:var(--ink-2); margin-bottom:20px; max-width:70ch;">
+                给同学与新手研究者的常见问题速答，点击展开查看详细建议。
+            </p>
+
+            <details class="faq reveal">
+                <summary><span class="q-mark">Q1</span> 如何阅读一篇论文？ <span class="chev">▾</span></summary>
+                <div class="faq-body">
+                    <p>推荐「三遍阅读法」，每遍目标不同，避免一开始就死磕细节：</p>
+                    <ul>
+                        <li><b>第一遍（5 分钟）：</b>看标题、摘要、结论、图表，判断是否值得继续读。</li>
+                        <li><b>第二遍（1 小时）：</b>通读，抓方法与结果，不懂的先标记不纠结。</li>
+                        <li><b>第三遍（数小时）：</b>在脑中复现作者思路，推导公式、思考可改进点。</li>
+                    </ul>
+                    <p>带着四个问题去读：解决什么问题？用了什么方法？结论是否站得住？对我有什么启发？</p>
+                    <div class="tip">💡 读完写一段 100 字的中文复述，比单纯划线有效十倍。</div>
+                </div>
+            </details>
+
+            <details class="faq reveal">
+                <summary><span class="q-mark">Q2</span> 如何判断期刊 / 会议水平？ <span class="chev">▾</span></summary>
+                <div class="faq-body">
+                    <ul>
+                        <li><b>分区：</b>JCR 分区、中科院分区；计算机领域看 <b>CCF 推荐目录</b>（A/B/C）。</li>
+                        <li><b>指标：</b>影响因子（IF）、h-index、被引频次；但别只看 IF。</li>
+                        <li><b>声誉：</b>IEEE / ACM / Springer / Elsevier 等正规出版社；是否顶会顶刊。</li>
+                        <li><b>排雷：</b>审稿周期过短、收费异常、无同行评审的需警惕掠夺性期刊，可在 DOAJ / Beall's List 查证。</li>
+                    </ul>
+                    <div class="tip">💡 计算机方向优先认 CCF 等级与会议声誉，会议往往比期刊更关键。</div>
+                </div>
+            </details>
+
+            <details class="faq reveal">
+                <summary><span class="q-mark">Q3</span> 如何投递一篇论文？ <span class="chev">▾</span></summary>
+                <div class="faq-body">
+                    <ul>
+                        <li><b>选刊匹配：</b>主题契合度 &gt; 影响因子；看近一年是否发过同类工作。</li>
+                        <li><b>打磨：</b>严格按模板排版，反复润色摘要与引言——这是审稿人最先看的地方。</li>
+                        <li><b>投稿：</b>通过期刊/会议在线系统提交，附 cover letter 说明贡献与创新点。</li>
+                        <li><b>回复审稿：</b>逐条回应，态度诚恳，能改则改、不能改则礼貌解释原因。</li>
+                    </ul>
+                    <div class="tip">💡 被拒是常态。审稿意见是无偿的高质量指导，按意见改完往往能投到更好的地方。</div>
+                </div>
+            </details>
+
+            <details class="faq reveal">
+                <summary><span class="q-mark">Q4</span> 发表论文有什么意义？ <span class="chev">▾</span></summary>
+                <div class="faq-body">
+                    <ul>
+                        <li><b>学术对话：</b>推动知识边界，接受同行评议的检验。</li>
+                        <li><b>能力证明：</b>体现研究、写作与批判性思维的综合能力。</li>
+                        <li><b>机会门槛：</b>升学、求职、申报项目的硬通货。</li>
+                    </ul>
+                    <p>但请记住——不唯论文。研究过程中产生的思考与判断力，比数量更重要。</p>
+                    <div class="tip">💡 一篇被反复引用的扎实工作，胜过十篇水会。</div>
+                </div>
+            </details>
+
+            <details class="faq reveal">
+                <summary><span class="q-mark">Q5</span> 做开源项目有什么意义？ <span class="chev">▾</span></summary>
+                <div class="faq-body">
+                    <ul>
+                        <li><b>工程能力：</b>真实代码、协作、code review 是课堂学不到的。</li>
+                        <li><b>影响力：</b>让他人复用你的工作，建立技术声誉与人脉。</li>
+                        <li><b>加速学习：</b>阅读优秀开源源码是最快的成长路径之一。</li>
+                        <li><b>反哺学术：</b>可复现的研究（代码 + 数据）正成为高质量论文的标配。</li>
+                    </ul>
+                    <div class="tip">💡 从一个好用的 README 开始。一个能跑起来、文档清晰的小项目，价值远超一个空有 star 的大仓库。</div>
+                </div>
+            </details>
+        </section>
+    </main>
+
+    <footer class="site">
+        <div class="container">
+            © <span id="year"></span> Jianhao Liu ·
+            <a href="mailto:jianhaoliu666@163.com">jianhaoliu666@163.com</a> ·
+            Wuhan, China
         </div>
-    </section>
+    </footer>
+
+    <script>
+        // Light, restrained scroll-reveal
+        (function () {
+            var els = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window)) {
+                els.forEach(function (e) { e.classList.add('in'); });
+                return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (en) {
+                    if (en.isIntersecting) {
+                        en.target.classList.add('in');
+                        io.unobserve(en.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            els.forEach(function (e) { io.observe(e); });
+
+            // Footer year
+            var y = document.getElementById('year');
+            if (y) y.textContent = new Date().getFullYear();
+        })();
+    </script>
 </body>
 </html>
