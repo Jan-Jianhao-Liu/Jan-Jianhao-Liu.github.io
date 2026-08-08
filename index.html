@@ -163,6 +163,39 @@
         ul.bullets li { margin-bottom: 6px; color: var(--ink-2); font-size: 15px; }
         ul.bullets li::marker { color: var(--indigo-500); }
 
+        /* ---------- Bilingual helpers ---------- */
+        .zh {
+            display: block; color: var(--muted); font-size: .92em;
+            margin-top: 2px; line-height: 1.55;
+        }
+        .zh em, .zh i { font-style: normal; color: #8b9bb4; }
+        .sec-head h2 .sep { color: var(--indigo-500); margin: 0 8px; font-weight: 500; }
+        .sec-head h2 .cn { color: var(--ink-2); font-weight: 600; letter-spacing: 0; }
+        .timeline-head .role-cn { color: #7f8ba7; font-weight: 500; }
+        .timeline-sub-cn {
+            color: #8b9bb4; margin: 0 0 8px; font-size: 13.5px; line-height: 1.55;
+        }
+        ul.bullets li .zh {
+            margin-top: 1px; font-size: 13.8px; color: #8b9bb4; padding-left: 4px;
+            border-left: 2px solid var(--indigo-100);
+        }
+        .pub-item .zh, .card .zh, .meta-line .zh, .lead .zh {
+            margin-top: 3px; font-size: 13.5px;
+        }
+        .lead-zh {
+            font-size: 15.5px; color: var(--ink-2);
+            padding: 10px 18px; background: #ffffff;
+            border-left: 3px solid var(--indigo-300); border-radius: 0 10px 10px 0;
+            margin-top: 2px;
+        }
+        .skill-group .group-cn {
+            font-size: 13px; color: var(--muted); margin-top: 2px; font-weight: 500;
+        }
+        .skill-group .tags-cn {
+            font-size: 12.5px; color: var(--muted); margin-top: 5px; line-height: 1.6;
+        }
+        nav.top a .nav-cn { color: var(--muted); margin-left: 2px; font-size: 12.5px; }
+
         /* ---------- Cards / grid ---------- */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
         .card {
@@ -298,6 +331,118 @@
             background: var(--indigo-50); border-radius: 8px; color: var(--indigo-800);
         }
 
+        /* ---------- Community / QQ Group ---------- */
+        .community {
+            background: linear-gradient(135deg, rgba(96,120,255,.08) 0%, rgba(172,141,255,.08) 100%);
+            border: 1px solid var(--indigo-100);
+            border-radius: calc(var(--radius) + 6px);
+            padding: 0;
+            overflow: hidden;
+        }
+        .community-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 0;
+        }
+        .community-info {
+            padding: 30px 32px 32px;
+        }
+        .community-info .eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 6px 12px; border-radius: 999px;
+            font-size: 12.5px; font-weight: 600; letter-spacing: .3px;
+            color: var(--indigo-800); background: rgba(99,102,241,.12);
+            margin-bottom: 14px;
+        }
+        .community-info .eyebrow::before {
+            content: "💬"; font-size: 13px;
+        }
+        .community-info h3 {
+            font-family: var(--serif);
+            font-size: 26px; font-weight: 700; color: var(--indigo-900);
+            line-height: 1.25; margin: 0 0 6px;
+        }
+        .community-info h3 .cn {
+            color: var(--ink-2); font-weight: 600; letter-spacing: 0;
+        }
+        .community-info h3 .sep { color: var(--indigo-400); margin: 0 8px; font-weight: 400; }
+        .community-desc {
+            color: var(--ink-2); font-size: 15px; line-height: 1.7; margin: 6px 0 4px;
+        }
+        .community-desc.en { color: #5b6a86; }
+        .community-tags {
+            display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 18px;
+        }
+        .community-tags span {
+            font-size: 12.5px; padding: 4px 10px;
+            background: #fff; color: var(--ink-2);
+            border: 1px solid var(--indigo-100); border-radius: 8px;
+        }
+        .community-tags span.hl {
+            color: var(--indigo-700); background: var(--indigo-50); border-color: var(--indigo-200);
+            font-weight: 600;
+        }
+        .community-id {
+            display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+            padding: 12px 14px; margin-bottom: 16px;
+            background: #fff; border: 1px solid var(--line);
+            border-radius: 12px; box-shadow: var(--shadow-sm);
+        }
+        .community-id .label {
+            font-size: 12.5px; color: var(--muted); font-weight: 500;
+        }
+        .community-id .group-num {
+            font-size: 19px; font-weight: 700; color: var(--indigo-800); letter-spacing: .5px;
+            font-variant-numeric: tabular-nums;
+        }
+        .btn-copy {
+            appearance: none; border: 1px solid var(--indigo-200); background: #fff;
+            color: var(--indigo-700); font-size: 12.5px; font-weight: 600;
+            padding: 6px 12px; border-radius: 8px; cursor: pointer;
+            transition: all .18s ease;
+        }
+        .btn-copy:hover { background: var(--indigo-50); transform: translateY(-1px); }
+        .btn-copy.copied { background: #ecfdf5; color: #059669; border-color: #a7f3d0; }
+        .community-ctas {
+            display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px;
+        }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 11px 18px; border-radius: 12px; font-size: 15px; font-weight: 600;
+            color: #fff; background: linear-gradient(135deg, var(--indigo-700), var(--indigo-500));
+            box-shadow: var(--shadow-md); transition: all .2s ease; text-decoration: none;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -12px rgba(67,56,202,.5); }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 11px 18px; border-radius: 12px; font-size: 15px; font-weight: 600;
+            color: var(--indigo-800); background: #fff;
+            border: 1px solid var(--indigo-200); text-decoration: none;
+            transition: all .18s ease;
+        }
+        .btn-secondary:hover { background: var(--indigo-50); transform: translateY(-1px); }
+        .community-qr {
+            background: linear-gradient(180deg, #eef2ff 0%, #e0e7ff 100%);
+            padding: 30px 28px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            border-left: 1px solid var(--indigo-100);
+        }
+        .qr-frame {
+            width: 100%; max-width: 260px; aspect-ratio: 1;
+            background: #fff; padding: 14px; border-radius: 20px;
+            box-shadow: 0 20px 40px -18px rgba(67,56,202,.45);
+            display: grid; place-items: center;
+        }
+        .qr-frame img { width: 100%; height: 100%; display: block; object-fit: contain; border-radius: 10px; }
+        .qr-hint {
+            margin-top: 16px; text-align: center; color: var(--indigo-900);
+            font-size: 14px; font-weight: 600;
+        }
+        .qr-hint .small {
+            display: block; color: var(--muted); font-weight: 500;
+            font-size: 12.5px; margin-top: 2px;
+        }
+
         /* ---------- Footer ---------- */
         footer.site {
             padding: 36px 0 48px; text-align: center; color: var(--muted); font-size: 13.5px;
@@ -320,6 +465,11 @@
             .grid-2, .lab-grid { grid-template-columns: 1fr; }
             .faq-body { padding-left: 22px; }
             .timeline-head { flex-direction: column; }
+            .community-grid { grid-template-columns: 1fr; }
+            .community-info { padding: 24px 22px 20px; }
+            .community-info h3 { font-size: 22px; }
+            .community-qr { border-left: 0; border-top: 1px solid var(--indigo-100); padding: 22px 22px 28px; }
+            .qr-frame { max-width: 220px; }
         }
     </style>
 </head>
@@ -328,14 +478,14 @@
         <div class="inner">
             <div class="brand">Jianhao <span>Liu</span></div>
             <ul>
-                <li><a href="#interests">兴趣</a></li>
-                <li><a href="#career">履历</a></li>
-                <li><a href="#projects">项目</a></li>
-                <li><a href="#skills">技能</a></li>
-                <li><a href="#publications">论著</a></li>
-                <li><a href="#lab">招募</a></li>
-                <li><a href="#students">同学</a></li>
-                <li><a href="#faq">答疑</a></li>
+                <li><a href="#interests">Interests<span class="nav-cn"> · 兴趣</span></a></li>
+                <li><a href="#career">Career<span class="nav-cn"> · 履历</span></a></li>
+                <li><a href="#projects">Projects<span class="nav-cn"> · 项目</span></a></li>
+                <li><a href="#skills">Skills<span class="nav-cn"> · 技能</span></a></li>
+                <li><a href="#publications">Publications<span class="nav-cn"> · 论著</span></a></li>
+                <li><a href="#lab">Lab<span class="nav-cn"> · 招募</span></a></li>
+                <li><a href="#students">Students<span class="nav-cn"> · 同学</span></a></li>
+                <li><a href="#faq">FAQ<span class="nav-cn"> · 答疑</span></a></li>
             </ul>
         </div>
     </nav>
@@ -343,15 +493,19 @@
     <header class="hero">
         <div class="container hero-grid">
             <div>
-                <h1>Jianhao Liu</h1>
+                <h1>Jianhao Liu · 刘健豪</h1>
                 <p class="tagline">
                     Lecturer in Big Data · researching <b>Trustworthy Generative Agents</b>,
                     <b>LLM Agents</b> &amp; <b>Machine Psychology</b> — exploring long-term behavioral
                     coherence and self-evolving agents.
                 </p>
+                <p class="tagline tagline-zh">
+                    大数据专业教师 · 研究方向为<b>可信生成式智能体</b>、<b>大语言模型智能体</b>与<b>机器心理学</b>，
+                    聚焦智能体的长期行为一致性与自我进化能力。
+                </p>
                 <div class="contact-bar">
                     <span class="chip"><span class="dot"></span> Email · jianhaoliu666@163.com</span>
-                    <span class="chip"><span class="dot"></span> Wuhan, Hubei, China</span>
+                    <span class="chip"><span class="dot"></span> Wuhan, Hubei, China · 中国 湖北 武汉</span>
                 </div>
             </div>
             <div class="avatar" aria-hidden="true">JL</div>
@@ -363,7 +517,7 @@
         <section class="block" id="interests">
             <div class="sec-head reveal">
                 <span class="num">01</span>
-                <h2>Research Interests</h2>
+                <h2>Research Interests<span class="sep">·</span><span class="cn">研究兴趣</span></h2>
                 <span class="rule"></span>
             </div>
             <div class="lead reveal">
@@ -371,8 +525,13 @@
                 Human–Computer Interaction · Long-Term Behavioral Coherence ·
                 Self-Evolving Agents · AI4SE
             </div>
+            <div class="lead-zh reveal">
+                可信生成式智能体 · 大语言模型智能体 · 机器心理学 ·
+                人机交互 · 长期行为一致性 · 自演化智能体 · 人工智能助力软件工程
+            </div>
             <div class="meta-line reveal">
                 <strong>Standardized Test:</strong> GRE 328 (V+Q), AW 4.0
+                <span class="zh"><strong>标准考试：</strong>GRE 328（语文+数学），写作 4.0</span>
             </div>
         </section>
 
@@ -380,51 +539,49 @@
         <section class="block" id="career">
             <div class="sec-head reveal">
                 <span class="num">02</span>
-                <h2>Work &amp; Education</h2>
+                <h2>Work &amp; Education<span class="sep">·</span><span class="cn">工作与教育履历</span></h2>
                 <span class="rule"></span>
             </div>
             <div class="timeline reveal">
                 <div class="timeline-item">
                     <div class="timeline-head">
-                        <span>2025/03 – Present · Wuhan Textile University, Wuhan</span>
-                        <span class="where">Lecturer in Big Data</span>
+                        <span>2025/03 – Present · Wuhan Textile University, Wuhan<span class="zh">武汉纺织大学（武汉）</span></span>
+                        <span class="where">Lecturer in Big Data<span class="zh role-cn">大数据专业教师</span></span>
                     </div>
                     <ul class="bullets">
-                        <li>Delivered core undergraduate courses: Big Data Analytic, Big Data Technology, Data Visualization.</li>
-                        <li>Built LLM &amp; generative agent practical training modules; supervised students to win multiple provincial AI competition awards and obtain big data analyst certifications.</li>
+                        <li>Delivered core undergraduate courses: Big Data Analytic, Big Data Technology, Data Visualization.<span class="zh">主讲本科核心课程：大数据分析、大数据技术、数据可视化。</span></li>
+                        <li>Built LLM &amp; generative agent practical training modules; supervised students to win multiple provincial AI competition awards and obtain big data analyst certifications.<span class="zh">搭建大语言模型与生成式智能体实训模块；指导学生多次获得省级 AI 竞赛奖项，并取得大数据分析师职业认证。</span></li>
                     </ul>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-head">
-                        <span>2025/03 – Present · Enshellx Dedux Lubricants, Wuhan</span>
-                        <span class="where">Data Analyst &amp; Digital Transformation Engineer</span>
+                        <span>2023/05 – 2025/03 · Enshellx Dedux Lubricants, Wuhan<span class="zh"> Enshellx Dedux 有限公司</span></span>
+                        <span class="where">Data Analyst &amp; Digital Transformation Engineer<span class="zh role-cn">数据分析师 &amp; 数字化转型工程师</span></span>
                     </div>
                     <ul class="bullets">
-                        <li>Developed factory data warehouse, ETL pipelines and digital simulation models for manufacturing production.</li>
+                        <li>Developed factory data warehouse, ETL pipelines and digital simulation models for manufacturing production.<span class="zh">负责制造生产环节的工厂数据仓库搭建、ETL 数据流水线与数字化仿真模型开发。</span></li>
                     </ul>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-head">
-                        <span>03/2021 – 05/2023 · CIICMC, Wuhan</span>
-                        <span class="where">Consultant, Project Manager</span>
+                        <span>03/2021 – 05/2023 · CIICMC, Wuhan<span class="zh">中智管理咨询有限公司（武汉）</span></span>
+                        <span class="where">Consultant, Project Manager<span class="zh role-cn">咨询顾问 / 项目经理</span></span>
                     </div>
                     <ul class="bullets">
-                        <li>Built quantitative modelling and digital evaluation frameworks; managed projects with annual revenue over ¥10M.</li>
+                        <li>Built quantitative modelling and digital evaluation frameworks; managed projects with annual revenue over ¥10M.<span class="zh">搭建量化模型与数字化评估框架；负责管理合同额超千万元的年度咨询项目。</span></li>
                     </ul>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-head">
-                        <span>09/2019 – 01/2021 · University of Liverpool, UK</span>
-                        <span class="where">MSc Business Analysis &amp; Big Data (Merit, Top 30%)</span>
+                        <span>09/2019 – 01/2021 · University of Liverpool, UK<span class="zh">英国 利物浦大学</span></span>
+                        <span class="where">MSc Business Analysis &amp; Big Data (Merit)<span class="zh role-cn">商业分析与大数据 理学硕士</span></span>
                     </div>
-                    <div class="timeline-sub">Core: Machine Learning &amp; Data Mining, Big Data Management, Business Simulation, Predictive Analytics</div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-head">
-                        <span>09/2016 – 06/2019 · University of Sunderland, UK</span>
-                        <span class="where">BA Accounting &amp; Financial Management (Merit, Top 30%)</span>
+                        <span>09/2016 – 06/2019 · University of Sunderland, UK<span class="zh">英国 桑德兰大学</span></span>
+                        <span class="where">BA Accounting &amp; Financial Management (Merit)<span class="zh role-cn">会计与金融管理 学士学位</span></span>
                     </div>
-                    <div class="timeline-sub">Math &amp; Stat Foundation: Advanced Math, Linear Algebra, Probability, Econometrics, Business Quantitative Methods</div>
                 </div>
             </div>
         </section>
@@ -433,39 +590,33 @@
         <section class="block" id="projects">
             <div class="sec-head reveal">
                 <span class="num">03</span>
-                <h2>Research &amp; Project Experience</h2>
+                <h2>Research &amp; Project Experience<span class="sep">·</span><span class="cn">研究与项目经历</span></h2>
                 <span class="rule"></span>
             </div>
             <div class="timeline reveal">
                 <div class="timeline-item">
-                    <div class="timeline-head">06/2026 – Present · Independent Cognitive AI Research</div>
+                    <div class="timeline-head">06/2026 – Present · Independent Cognitive AI Research<span class="zh">2026年6月至今 · 认知人工智能独立研究</span></div>
                     <ul class="bullets">
-                        <li>Proposed UCAG multi-relational graph structure and BSA algorithm for cognitive generative agent modeling.</li>
+                        <li>Proposed UCAG multi-relational graph structure and BSA algorithm for cognitive generative agent modeling.<span class="zh">提出用于认知生成式智能体建模的 UCAG 多关系图结构与 BSA 算法。</span></li>
                     </ul>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-head">12/2025 – Present · Project Lead, Multimodal AI Smart Glasses</div>
+                    <div class="timeline-head">09/2025 – 02/2026 · University Big Data &amp; AI Laboratory Construction<span class="zh">2025年9月 – 2026年2月 · 校级大数据与人工智能实验室建设</span></div>
                     <ul class="bullets">
-                        <li>Built real-time multimodal pipeline integrating object detection, OCR and dynamic obstacle warning system.</li>
+                        <li>Designed full-stack digital intelligence lab solution covering hardware, software and teaching curriculum.<span class="zh">设计覆盖硬件、软件与教学课程体系的全栈数字智能实验室整体方案。</span></li>
+                        <li>Deployed distributed clusters: Hadoop, Spark, Kafka, Ray for large-scale big data &amp; LLM experimental verification.<span class="zh">部署 Hadoop、Spark、Kafka、Ray 分布式集群，用于大规模大数据与大语言模型实验验证。</span></li>
                     </ul>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-head">09/2025 – 02/2026 · University Big Data &amp; AI Laboratory Construction</div>
+                    <div class="timeline-head">12/2024 – 06/2025 · Digital Warehouse Modeling, Zhixin Technology<span class="zh">2024年12月 – 2025年6月 · 智信科技 数据仓库建模</span></div>
                     <ul class="bullets">
-                        <li>Designed full-stack digital intelligence lab solution covering hardware, software and teaching curriculum.</li>
-                        <li>Deployed distributed clusters: Hadoop, Spark, Kafka, Ray for large-scale big data &amp; LLM experimental verification.</li>
+                        <li>Participated in enterprise data warehouse architecture design and multi-dimensional business data modeling.<span class="zh">参与企业数据仓库架构设计与多维业务数据建模工作。</span></li>
                     </ul>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-head">12/2024 – 06/2025 · Digital Warehouse Modeling, Zhixin Technology</div>
+                    <div class="timeline-head">06/2020 – 11/2020 · Manufacturing Digital Transformation Simulation Study<span class="zh">2020年6月 – 2020年11月 · 制造业数字化转型仿真研究</span></div>
                     <ul class="bullets">
-                        <li>Participated in enterprise data warehouse architecture design and multi-dimensional business data modeling.</li>
-                    </ul>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-head">06/2020 – 11/2020 · Manufacturing Digital Transformation Simulation Study</div>
-                    <ul class="bullets">
-                        <li>Constructed multi-dimensional KPI system and digital simulation models for automotive manufacturing enterprises.</li>
+                        <li>Constructed multi-dimensional KPI system and digital simulation models for automotive manufacturing enterprises.<span class="zh">为汽车制造企业构建多维度 KPI 体系与数字化仿真模型。</span></li>
                     </ul>
                 </div>
             </div>
@@ -475,20 +626,21 @@
         <section class="block" id="teaching">
             <div class="sec-head reveal">
                 <span class="num">04</span>
-                <h2>Teaching &amp; Certifications</h2>
+                <h2>Teaching &amp; Certifications<span class="sep">·</span><span class="cn">教学与资质证书</span></h2>
                 <span class="rule"></span>
             </div>
             <div class="timeline reveal">
                 <div class="timeline-item">
-                    <div class="timeline-head">Wuhan Textile University, School of Foreign Trade &amp; Business (2025–Present)</div>
+                    <div class="timeline-head">Wuhan Textile University, School of Foreign Trade &amp; Business (2025–Present)<span class="zh">武汉纺织大学外经贸学院（2025年至今）</span></div>
                     <ul class="bullets">
-                        <li>Instructor for undergraduate core modules: Big Data Technology Principles, Data Visualization, Business Data Analysis.</li>
-                        <li>Supervisor for provincial-level innovation contests: Challenge Cup, National Software Competition, WorldSkills Hubei.</li>
+                        <li>Instructor for undergraduate core modules: Big Data Technology Principles, Data Visualization, Business Data Analysis.<span class="zh">本科核心课主讲教师：大数据技术原理、数据可视化、商务数据分析。</span></li>
+                        <li>Supervisor for provincial-level innovation contests: Challenge Cup, National Software Competition, WorldSkills Hubei.<span class="zh">省级创新竞赛指导：挑战杯、全国软件大赛、世界技能大赛湖北省选拔赛。</span></li>
                     </ul>
                 </div>
             </div>
             <div class="meta-line reveal">
                 <strong>Certificates:</strong> PMP (PMI) · National University Teaching Qualification Certificate
+                <span class="zh"><strong>资质证书：</strong>项目管理专业人士资格认证（PMP / PMI 颁发） · 高等学校教师资格证书</span>
             </div>
         </section>
 
@@ -496,51 +648,61 @@
         <section class="block" id="skills">
             <div class="sec-head reveal">
                 <span class="num">05</span>
-                <h2>Technical Skills</h2>
+                <h2>Technical Skills<span class="sep">·</span><span class="cn">技术技能</span></h2>
                 <span class="rule"></span>
             </div>
             <div class="grid-2 reveal">
                 <div class="card">
                     <div class="skill-group">
                         <h4>AI &amp; Generative Agents</h4>
+                        <div class="group-cn">人工智能与生成式智能体</div>
                         <div class="tags">
                             <span class="tag">PyTorch</span><span class="tag">TensorFlow</span>
                             <span class="tag">Local LLM Deployment</span>
                             <span class="tag">Graph-based Agent Architecture</span>
                         </div>
+                        <div class="tags-cn">深度学习框架 · 本地大语言模型部署 · 基于图结构的智能体架构</div>
                     </div>
                     <div class="skill-group">
                         <h4>Distributed Big Data &amp; ETL</h4>
+                        <div class="group-cn">分布式大数据与数据流水线（ETL）</div>
                         <div class="tags">
                             <span class="tag">Hadoop</span><span class="tag">Spark</span><span class="tag">Flink</span>
                             <span class="tag">Kafka</span><span class="tag">Flume</span><span class="tag">Hive</span><span class="tag">Kettle</span>
                         </div>
+                        <div class="tags-cn">分布式存储与计算 · 流批一体处理 · 消息队列 · 数仓与 ETL 工具</div>
                     </div>
                     <div class="skill-group">
                         <h4>Database &amp; Graph Computing</h4>
+                        <div class="group-cn">数据库与图计算</div>
                         <div class="tags">
                             <span class="tag">MySQL</span><span class="tag">MongoDB</span>
                             <span class="tag">Redis</span><span class="tag">Neo4j</span>
                         </div>
+                        <div class="tags-cn">关系型数据库 · 文档数据库 · 缓存 · 图数据库</div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="skill-group">
                         <h4>Programming &amp; Visualization</h4>
+                        <div class="group-cn">编程语言与数据可视化</div>
                         <div class="tags">
                             <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Java</span>
                             <span class="tag">C++</span><span class="tag">Scala</span>
                             <span class="tag">Tableau</span><span class="tag">Matplotlib</span>
                             <span class="tag">ECharts</span><span class="tag">SPSS</span>
                         </div>
+                        <div class="tags-cn">主流编程语言 · BI 工具 · Python 科学制图 · Web 可视化图表 · 统计分析</div>
                     </div>
                     <div class="skill-group">
                         <h4>Simulation &amp; DevOps</h4>
+                        <div class="group-cn">系统仿真与研发运维</div>
                         <div class="tags">
                             <span class="tag">Witness Simulation</span><span class="tag">UE4</span>
                             <span class="tag">Docker</span><span class="tag">VMware</span>
                             <span class="tag">AzerothCore Simulation Testbed</span>
                         </div>
+                        <div class="tags-cn"> Witness 生产流程仿真 · UE4 虚幻引擎 · 容器与虚拟化 · AzerothCore 仿真实验床</div>
                     </div>
                 </div>
             </div>
@@ -549,22 +711,22 @@
         <section class="block" id="publications">
             <div class="sec-head reveal">
                 <span class="num">06</span>
-                <h2>Publications &amp; Intellectual Property</h2>
+                <h2>Publications &amp; Intellectual Property<span class="sep">·</span><span class="cn">论著与知识产权</span></h2>
                 <span class="rule"></span>
             </div>
             <div class="grid-2 reveal">
                 <div class="card">
-                    <h3>📚 Peer-Reviewed Papers</h3>
-                    <div class="pub-item"><span class="idx">01</span> Zhou J, Xu L, Wang Q, Liu J. Coordinated Development of Manufacturing &amp; Logistics Under Hubei Pilot Zone Strategy. <i>2025 IEEE IDAACS</i>, Poland, 2025.</div>
-                    <div class="pub-item"><span class="idx">02</span> Liu J. Big Data Applications, Challenges and Countermeasures in Healthcare. <i>Science and Technology Information Research</i>, 2025.</div>
-                    <div class="pub-item"><span class="idx">03</span> Liu J. Big Data-Driven Business Analysis &amp; Decision Support Systems. <i>Frontiers of Economics and Management</i>, 2025.</div>
-                    <div class="pub-item"><span class="idx">04</span> Liu J. Integrated Marketing &amp; Business Analytics Innovation: Automobile Enterprise Sandbox Case. <i>China Industry and Economics</i>, 2023.</div>
+                    <h3>📚 Peer-Reviewed Papers<span class="zh">同行评议论文</span></h3>
+                    <div class="pub-item"><span class="idx">01</span> Zhou J, Xu L, Wang Q, Liu J. Coordinated Development of Manufacturing &amp; Logistics Under Hubei Pilot Zone Strategy. <i>2025 IEEE IDAACS</i>, Poland, 2025.<span class="zh">湖北自贸区战略下制造业与物流业协同发展研究。<i>2025 年 IEEE 智能数据采集与先进计算系统国际会议（IDAACS）</i>，波兰，2025。</span></div>
+                    <div class="pub-item"><span class="idx">02</span> Liu J. Big Data Applications, Challenges and Countermeasures in Healthcare. <i>Science and Technology Information Research</i>, 2025.<span class="zh">医疗健康领域大数据的应用、挑战与对策。<i>《科技信息研究》</i>，2025。</span></div>
+                    <div class="pub-item"><span class="idx">03</span> Liu J. Big Data-Driven Business Analysis &amp; Decision Support Systems. <i>Frontiers of Economics and Management</i>, 2025.<span class="zh">大数据驱动的商务分析与决策支持系统。<i>《经济与管理前沿》</i>，2025。</span></div>
+                    <div class="pub-item"><span class="idx">04</span> Liu J. Integrated Marketing &amp; Business Analytics Innovation: Automobile Enterprise Sandbox Case. <i>China Industry and Economics</i>, 2023.<span class="zh">整合营销与商务分析创新：以汽车企业沙盘案例为例。<i>《中国工业与经济》</i>，2023。</span></div>
                 </div>
                 <div class="card">
-                    <h3>💻 Software Copyrights (3 Registered)</h3>
-                    <div class="pub-item"><span class="idx">01</span> Big Data Quality Assessment Improvement Process Management System (2026SR0603954)</div>
-                    <div class="pub-item"><span class="idx">02</span> Real-Time Big Data Stream ML Adaptive Analysis Platform (2026SR0611951)</div>
-                    <div class="pub-item"><span class="idx">03</span> Big Data Clustering Algorithm Application System (2025SR0903841)</div>
+                    <h3>💻 Software Copyrights (3 Registered)<span class="zh">软件著作权（已登记 3 项）</span></h3>
+                    <div class="pub-item"><span class="idx">01</span> Big Data Quality Assessment Improvement Process Management System (2026SR0603954)<span class="zh">大数据质量评估改进流程管理系统（登记号 2026SR0603954）</span></div>
+                    <div class="pub-item"><span class="idx">02</span> Real-Time Big Data Stream ML Adaptive Analysis Platform (2026SR0611951)<span class="zh">实时大数据流式机器学习自适应分析平台（登记号 2026SR0611951）</span></div>
+                    <div class="pub-item"><span class="idx">03</span> Big Data Clustering Algorithm Application System (2025SR0903841)<span class="zh">大数据聚类算法应用系统（登记号 2025SR0903841）</span></div>
                 </div>
             </div>
         </section>
@@ -578,7 +740,7 @@
             </div>
             <div class="lab-hero reveal">
                 <div class="eyebrow">We are recruiting</div>
-                <h3>寻找愿意一起做认知 AI 测试的同学</h3>
+                <h3>寻找愿意一起做 AI 情感仿真 测试的同学</h3>
                 <p>
                     我们正在推进可信生成式智能体（Trustworthy Generative Agents）与 LLM Agent 的研究，
                     需要同学参与实验设计、用例测试与行为评估。无论你是想入门科研，
@@ -628,19 +790,30 @@
                             <div class="role">Big Data · AI 工程方向</div>
                         </div>
                     </div>
-                    <div class="desc">大数据与智能体方向实践，参与实验复现与系统开发。</div>
-                    <a class="gh" href="https://github.com/" target="_blank" rel="noopener">↗ GitHub 作品</a>
+                    <div class="desc">项目开发经历：AI智能眼镜、营养助手视觉检测系统、汽车自动驾驶目标检测算法。</div>
+                    <a class="gh" href="https://github.com/Supu7796" target="_blank" rel="noopener">↗ GitHub 作品</a>
                 </div>
                 <div class="student-card">
                     <div class="top">
                         <div class="student-avatar">曹</div>
                         <div>
                             <div class="name">曹伟凡</div>
-                            <div class="role">AI Agent · 研究方向</div>
+                            <div class="role">Big Data · 数字化 研究方向</div>
                         </div>
                     </div>
-                    <div class="desc">LLM Agent 与知识图谱结合的问答与评估实践。</div>
-                    <a class="gh" href="https://github.com/" target="_blank" rel="noopener">↗ GitHub 作品</a>
+                    <div class="desc">项目开发经历：外贸获客系统开发。参与实验复现与系统开发。</div>
+                    <a class="gh" href="https://github.com/sola3236" target="_blank" rel="noopener">↗ GitHub 作品</a>
+                </div>
+                <div class="student-card">
+                    <div class="top">
+                        <div class="student-avatar">王</div>
+                        <div>
+                            <div class="name">王成林</div>
+                            <div class="role">Big Data · AI Agent方向</div>
+                        </div>
+                    </div>
+                    <div class="desc">大数据与智能体方向实践，参与实验复现与系统开发。</div>
+                    <a class="gh" href="https://github.com/fggsgsgg" target="_blank" rel="noopener">↗ GitHub 作品</a>
                 </div>
             </div>
         </section>
@@ -722,6 +895,70 @@
                 </div>
             </details>
         </section>
+
+        <!-- ============ Community / QQ Group ============ -->
+        <section class="block" id="community">
+            <div class="sec-head reveal">
+                <span class="num">10</span>
+                <h2>Join Our Community<span class="sep">·</span><span class="cn">加入交流频道</span></h2>
+                <span class="rule"></span>
+            </div>
+            <div class="community reveal">
+                <div class="community-grid">
+                    <div class="community-info">
+                        <span class="eyebrow">Open Channel · 开放讨论频道</span>
+                        <h3>智能体虚拟世界科学交流群<span class="sep">·</span><span class="cn">Generative Agents &amp; Virtual World Science</span></h3>
+                        <p class="community-desc">
+                            聚焦可信智能体、AI 情感认知仿真、虚拟社会仿真、数字生命、世界模型、AI4SE、科研与游戏设计竞赛。
+                            欢迎分享论文资讯、技术问题、竞赛组队、科研 idea 交流。
+                        </p>
+                        <p class="community-desc en">
+                            Focused on <b>Trustworthy Agents</b>, AI affective &amp; cognitive simulation,
+                            virtual society simulation, digital life, world models, AI4SE, plus research &amp;
+                            game-design competitions. Share paper news, technical questions, team-ups,
+                            and research ideas — all welcome.
+                        </p>
+                        <div class="community-tags">
+                            <span class="hl">🤖 AI 智能体</span>
+                            <span class="hl">🧠 认知仿真</span>
+                            <span>虚拟社会</span>
+                            <span>数字生命</span>
+                            <span>世界模型</span>
+                            <span>AI4SE</span>
+                            <span>科研竞赛</span>
+                            <span>游戏设计</span>
+                        </div>
+                        <div class="community-id" id="groupIdCard">
+                            <span class="label">群号 · Group ID:</span>
+                            <span class="group-num" id="groupNum">949556221</span>
+                            <button class="btn-copy" type="button" id="copyGroupBtn" title="Copy group number">📋 复制</button>
+                            <span class="label" style="margin-left:auto;">入群请回答验证问题 · Verification required</span>
+                        </div>
+                        <div class="community-ctas">
+                            <a class="btn-primary" href="https://qm.qq.com/q/rxG2cYlTDq" target="_blank" rel="noopener">
+                                🚀 申请加入 · Apply via QQ
+                            </a>
+                            <a class="btn-secondary" href="mailto:jianhaoliu666@163.com?subject=%E5%8A%A0%E5%85%A5%E6%99%BA%E8%83%BD%E4%BD%93%E7%A4%BE%E7%BE%A4%E4%BA%A4%E6%B5%81&body=%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E6%9B%B4%E5%A4%9A%E5%85%B3%E4%BA%8E%E6%99%BA%E8%83%BD%E4%BD%93%E8%99%9A%E6%8B%9F%E4%B8%96%E7%95%8C%E7%A7%91%E5%AD%A6%E4%BA%A4%E6%B5%81%E7%BE%A4%EF%BC%88949556221%EF%BC%89%E7%9A%84%E4%BF%A1%E6%81%AF...">
+                                ✉️ 邮件联系 · Email us
+                            </a>
+                        </div>
+                    </div>
+                    <div class="community-qr" aria-label="QQ Group QR code">
+                        <div class="qr-frame">
+                            <img
+                                src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=10&ecc=H&data=https%3A%2F%2Fqm.qq.com%2Fq%2FrxG2cYlTDq"
+                                alt="智能体虚拟世界科学交流群二维码 · QQ Group QR Code (949556221)"
+                                loading="lazy"
+                                onerror="this.onerror=null;this.src='https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=10&ecc=M&data=949556221%0A%E6%99%BA%E8%83%BD%E4%BD%93%E8%99%9A%E6%8B%9F%E4%B8%96%E7%95%8C%E7%A7%91%E5%AD%A6%E4%BA%A4%E6%B5%81%E7%BE%A4';" />
+                        </div>
+                        <div class="qr-hint">
+                            打开手机 QQ · 扫码加群
+                            <span class="small">Scan QR with Mobile QQ to join · Group 949556221</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="site">
@@ -753,6 +990,42 @@
             // Footer year
             var y = document.getElementById('year');
             if (y) y.textContent = new Date().getFullYear();
+
+            // Copy QQ group number button
+            var btn = document.getElementById('copyGroupBtn');
+            var numEl = document.getElementById('groupNum');
+            if (btn && numEl) {
+                btn.addEventListener('click', function () {
+                    var text = numEl.textContent.trim();
+                    var done = function () {
+                        var original = btn.textContent;
+                        btn.textContent = '✓ 已复制 · Copied';
+                        btn.classList.add('copied');
+                        setTimeout(function () {
+                            btn.textContent = original;
+                            btn.classList.remove('copied');
+                        }, 1800);
+                    };
+                    try {
+                        if (navigator.clipboard && navigator.clipboard.writeText) {
+                            navigator.clipboard.writeText(text).then(done).catch(function () {
+                                fallback();
+                            });
+                        } else {
+                            fallback();
+                        }
+                    } catch (e) { fallback(); }
+                    function fallback() {
+                        var ta = document.createElement('textarea');
+                        ta.value = text;
+                        ta.style.position = 'fixed'; ta.style.top = '-999px';
+                        document.body.appendChild(ta); ta.select();
+                        try { document.execCommand('copy'); } catch (e) {}
+                        document.body.removeChild(ta);
+                        done();
+                    }
+                });
+            }
         })();
     </script>
 </body>
