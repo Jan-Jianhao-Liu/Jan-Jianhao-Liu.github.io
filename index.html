@@ -74,6 +74,14 @@
             font-size: 14px; color: var(--ink-2); transition: background .2s, color .2s;
         }
         nav.top a:hover { background: var(--indigo-50); color: var(--indigo-700); }
+        nav.top a.nav-github {
+            display: inline-flex; align-items: center; gap: 6px;
+            margin-left: 4px;
+            background: var(--ink-1); color: #fff;
+            font-weight: 600;
+        }
+        nav.top a.nav-github:hover { background: #111827; color: #fff; }
+        nav.top a.nav-github svg { width: 16px; height: 16px; display: block; }
 
         /* ---------- Hero ---------- */
         header.hero {
@@ -103,9 +111,11 @@
             background: var(--card); border: 1px solid var(--line);
             border-radius: 999px; box-shadow: var(--shadow-sm);
             transition: transform .2s ease, box-shadow .2s ease;
+            text-decoration: none;
         }
         .chip:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
         .chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--indigo-500); }
+        .chip a { color: inherit; text-decoration: none; }
 
         .avatar {
             width: 116px; height: 116px; border-radius: 28px;
@@ -486,6 +496,12 @@
                 <li><a href="#lab">Lab<span class="nav-cn"> · 招募</span></a></li>
                 <li><a href="#students">Students<span class="nav-cn"> · 同学</span></a></li>
                 <li><a href="#faq">FAQ<span class="nav-cn"> · 答疑</span></a></li>
+                <li>
+                    <a class="nav-github" href="https://github.com/jan-jianhao-liu" target="_blank" rel="noopener" title="GitHub 代码仓库">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.99 5.24.99 11.52c0 4.87 3.16 9.01 7.54 10.47.55.1.75-.24.75-.53 0-.26-.01-.95-.02-1.86-3.07.67-3.72-1.48-3.72-1.48-.5-1.27-1.22-1.61-1.22-1.61-1-.68.08-.67.08-.67 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.57 1.2 3.19.92.1-.72.38-1.2.69-1.48-2.45-.28-5.03-1.22-5.03-5.43 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.4.11-2.92 0 0 .93-.3 3.04 1.13a10.6 10.6 0 0 1 5.54 0c2.11-1.43 3.04-1.13 3.04-1.13.6 1.52.22 2.64.11 2.92.7.77 1.13 1.75 1.13 2.95 0 4.22-2.58 5.14-5.04 5.42.4.34.76 1.02.76 2.06 0 1.48-.01 2.68-.01 3.04 0 .29.2.64.76.53A11.01 11.01 0 0 0 23 11.52C23 5.24 18.27.5 12 .5Z"/></svg>
+                        GitHub
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -504,8 +520,14 @@
                     聚焦智能体的长期行为一致性与自我进化能力。
                 </p>
                 <div class="contact-bar">
-                    <span class="chip"><span class="dot"></span> Email · jianhaoliu666@163.com</span>
+                    <a class="chip" href="mailto:jianhaoliu666@163.com" title="Send email">
+                        <span class="dot"></span> Email · jianhaoliu666@163.com
+                    </a>
                     <span class="chip"><span class="dot"></span> Wuhan, Hubei, China · 中国 湖北 武汉</span>
+                    <a class="chip" href="https://github.com/jan-jianhao-liu" target="_blank" rel="noopener" title="GitHub Profile">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.99 5.24.99 11.52c0 4.87 3.16 9.01 7.54 10.47.55.1.75-.24.75-.53 0-.26-.01-.95-.02-1.86-3.07.67-3.72-1.48-3.72-1.48-.5-1.27-1.22-1.61-1.22-1.61-1-.68.08-.67.08-.67 1.1.08 1.68 1.13 1.68 1.13.98 1.68 2.57 1.2 3.19.92.1-.72.38-1.2.69-1.48-2.45-.28-5.03-1.22-5.03-5.43 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.4.11-2.92 0 0 .93-.3 3.04 1.13a10.6 10.6 0 0 1 5.54 0c2.11-1.43 3.04-1.13 3.04-1.13.6 1.52.22 2.64.11 2.92.7.77 1.13 1.75 1.13 2.95 0 4.22-2.58 5.14-5.04 5.42.4.34.76 1.02.76 2.06 0 1.48-.01 2.68-.01 3.04 0 .29.2.64.76.53A11.01 11.01 0 0 0 23 11.52C23 5.24 18.27.5 12 .5Z"/></svg>
+                        GitHub · 代码仓库
+                    </a>
                 </div>
             </div>
             <div class="avatar" aria-hidden="true">JL</div>
