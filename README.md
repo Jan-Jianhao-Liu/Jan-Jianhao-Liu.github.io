@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/Jan-Jianhao-Liu/Jan-Jianhao-Liu.github.io/assets/waifu_banner.jpg" width="100%" alt="Jianhao Liu" />
+  <img src="https://cdn.jsdelivr.net/gh/Jan-Jianhao-Liu/Jan-Jianhao-Liu.github.io/assets/waifu_banner_v2.jpg" width="100%" alt="Jianhao Liu" />
 </p>
 
 <p align="center">
@@ -9,7 +9,13 @@
   <img src="https://img.shields.io/badge/-Big%20Data-E34F26?style=flat-square" />
 </p>
 
-# Jan
+# Jianhao Liu · 刘健豪
+
+大数据专业教师，研究方向为可信生成式智能体、大语言模型智能体与机器心理学。
+
+- ✉ jianhaoliu666@163.com
+- 📍 中国湖北·武汉
+
 ---
 
 ## ✦ 一、研究兴趣
@@ -35,20 +41,23 @@
 ## 🛠 三、技术栈
 
 **AI 与生成式智能体**
-PyTorch · TensorFlow · LangChain · LangGraph · OpenAI
+PyTorch · TensorFlow · 本地 LLM 部署 · 基于图结构的智能体架构
 
 **分布式大数据与 ETL**
-Hadoop · Spark · Flink · Kafka · Flume · Hive · Kettle · Impala · MapReduce
+Hadoop · Spark · Flink · Kafka · Flume · Hive · Kettle
 
 **数据库与图计算**
-MySQL · MongoDB · Redis · ArangoDB · Spark GraphX · Pregel
+MySQL · MongoDB · Redis · Neo4j
 
 **编程与可视化**
-Python · SQL · Java · C++ · Scala · ECharts
+Python · SQL · Java · C++ · Scala · Tableau · Matplotlib · ECharts · SPSS
+
+**系统仿真与 DevOps**
+Witness · UE4 · Docker · VMware · AzerothCore 仿真实验床
 
 ---
 
-## ⁂ 四、塔罗聚会 · 加入交流频道
+## ⁂ 七、塔楼聚会 · 加入交流频道
 
 **智能体虚拟世界科学交流群 · Generative Agents & Virtual World Science**
 > 聚焦可信智能体、AI 情感认知仿真、虚拟社会仿真、数字生命、世界模型、AI4SE、科研与游戏设计竞赛。
