@@ -9,12 +9,7 @@
   <img src="https://img.shields.io/badge/-Big%20Data-E34F26?style=flat-square" />
 </p>
 
-# Jianhao Liu · 刘健豪
-
-大数据专业教师，研究方向为可信生成式智能体、大语言模型智能体与机器心理学。
-
-- ✉ jianhaoliu666@163.com
-- 📍 中国湖北·武汉
+# Jan 
 
 ---
 
