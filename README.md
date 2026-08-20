@@ -36,23 +36,20 @@
 ## 🛠 三、技术栈
 
 **AI 与生成式智能体**
-PyTorch · TensorFlow · 本地 LLM 部署 · 基于图结构的智能体架构
+PyTorch · TensorFlow · LangChain · LangGraph · OpenAI
 
 **分布式大数据与 ETL**
-Hadoop · Spark · Flink · Kafka · Flume · Hive · Kettle
+Hadoop · Spark · Flink · Ray · Kafka · Flume · Hive · Kettle · MapReduce · Impala
 
 **数据库与图计算**
-MySQL · MongoDB · Redis · Neo4j
+MySQL · MongoDB · Redis · ArangoDB · SparkGraphX · Pregel
 
 **编程与可视化**
-Python · SQL · Java · C++ · Scala · Tableau · Matplotlib · ECharts · SPSS
-
-**系统仿真与 DevOps**
-Witness · UE4 · Docker · VMware · AzerothCore 仿真实验床
+Python · SQL · Java · C++ · Scala · Tableau · ECharts
 
 ---
 
-## ⁂ 七、塔楼聚会 · 加入交流频道
+## ⁂ 四、塔罗聚会 · 加入交流频道
 
 **智能体虚拟世界科学交流群 · Generative Agents & Virtual World Science**
 > 聚焦可信智能体、AI 情感认知仿真、虚拟社会仿真、数字生命、世界模型、AI4SE、科研与游戏设计竞赛。
